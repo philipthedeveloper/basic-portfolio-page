@@ -1,0 +1,152 @@
+.contact {
+  position: relative;
+}
+
+.c-bg {
+  width: 20px;
+  height: 100%;
+  background-color: #59b256;
+  position: absolute;
+}
+
+.c-wrapper {
+  padding: var(--large);
+  display: flex;
+}
+
+.c-left {
+  flex: 1;
+}
+
+.c-right {
+  flex: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-title {
+  font-size: var(--extra-large);
+  width: 80%;
+}
+
+.c-info-item {
+  display: flex;
+  align-items: center;
+  margin: var(--large) 0;
+  font-weight: 600;
+  width: 70%;
+}
+
+.c-icon {
+  inline-size: var(--medium);
+  aspect-ratio: 1 / 1;
+  font-size: var(--medium);
+  margin-right: 1.25rem;
+}
+
+form {
+  margin-block-start: 1.25rem;
+}
+
+input {
+  inline-size: 100%;
+  block-size: var(--large);
+  border: none;
+  border-block-end: 1px solid black;
+  font-size: 1rem;
+  padding-inline-start: 0.675rem;
+  position: relative;
+  outline: none;
+}
+
+textarea {
+  font-family: "Arial Narrow";
+  inline-size: 100%;
+  margin: 0.675rem 0px;
+  font-size: 1rem;
+  padding: 0.675rem;
+  outline: none;
+  resize: none;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+}
+
+button[type="submit"] {
+  border: none;
+  padding: 1rem;
+  background-color: #59b256;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #3d7a3b;
+}
+
+.input {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.input {
+  width: 60%;
+  margin: 0.675rem 0px;
+}
+
+.input:focus-within::before {
+  transform: scaleX(1);
+}
+
+.input:focus-within input {
+  border-color: #59b256;
+}
+
+.input::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 92%;
+  background-color: #59b256;
+  z-index: 4;
+  transform: scaleX(0);
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 480px) {
+  .c-wrapper {
+    flex-direction: column;
+    padding: var(--medium);
+    padding-top: 0;
+  }
+
+  .c-title {
+    font-size: var(--medium);
+    width: 100%;
+  }
+
+  .c-desc {
+    display: none;
+  }
+
+  .c-info-item {
+    margin: var(--medium) 0;
+  }
+
+  form {
+    margin-block-start: 0;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,136 @@
+:root {
+  --extra-large: 3.75rem;
+  --large: 3.125rem;
+  --medium: 1.875rem;
+}
+
+.intro {
+  display: flex;
+  height: 100vh;
+}
+
+.left-intro {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-intro-wrapper {
+  padding: var(--large);
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.i-intro {
+  font-weight: 300;
+  font-size: var(--medium);
+}
+
+.i-name {
+  font-size: var(--extra-large);
+}
+
+.i-title {
+  height: var(--large);
+  overflow: hidden;
+}
+
+.i-title-wrapper {
+  list-style: none;
+  animation: move 10s ease-in-out 0s infinite alternate;
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(calc(var(--large) * 0));
+  }
+  25% {
+    transform: translateY(calc(var(--large) * -1));
+  }
+  50% {
+    transform: translateY(calc(var(--large) * -2));
+  }
+  75% {
+    transform: translateY(calc(var(--large) * -3));
+  }
+  100% {
+    transform: translateY(calc(var(--large) * -4));
+  }
+}
+
+.i-title-items {
+  height: var(--large);
+  font-size: var(--medium);
+  color: #59b256;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.right-intro {
+  flex: 1;
+  position: relative;
+}
+
+.i-bg {
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  background-color: #59b256;
+  position: absolute;
+  z-index: 1;
+}
+
+.i-portfolio-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  position: relative;
+  z-index: 4;
+}
+
+@media screen and (max-width: 480px) {
+  .intro {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-intro-wrapper {
+    padding: 1.25rem;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+  }
+
+  .right-intro {
+    width: 80%;
+    margin: auto;
+    height: 300px;
+    flex: none;
+  }
+
+  .i-portfolio-image {
+    object-position: 10% 0%;
+  }
+
+  .i-name {
+    font-size: 2.5rem;
+  }
+
+  .i-title-items {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .i-description {
+    padding: 1.87rem 0;
+  }
+  /* 
+  .i-bg {
+    display: none;
+  } */
+}
